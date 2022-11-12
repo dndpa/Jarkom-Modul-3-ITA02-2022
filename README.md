@@ -68,21 +68,40 @@ Loid dan Franky menyusun peta tersebut dengan hati-hati dan teliti. Ada beberapa
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.10 - [prefix IP].3.30 dan [prefix IP].3.60 - [prefix IP].3.85 (4).
 
 ### Jawaban No 4
-blabla
+Tambahkan ketentuan berikut ini pada file /etc/dhcp/dhcp.conf dengan command `cat  /etc/dhcp/dhcp.conf` di web console westalis:
+1. Atur subnet 192.211.3.0 (berarti semua yg diatur di switch 3)
+2. Atur range 192.211.3.10 sampai 192.211.3.30 dan 192.211.3.60 sampai 192.211.3.85 sesuai perintah soal
+3. Atur options routersnya 192.211.3.1 karna itu merupakan address ke switch 3
+4. Atur options broadcast-address 192.211.3.255 karna dalam 1 oktet paling besar 255
+
+<img width="379" alt="image" src="https://user-images.githubusercontent.com/58323466/201472673-200f05e6-9845-43e7-98ca-7310e8a3c3a7.png">
 
 
 ### Soal No 5
 Client mendapatkan DNS dari WISE dan client dapat terhubung dengan internet melalui DNS tersebut (5).
 
 ### Jawaban No 5
-blabla
+Tambahkan ketentuan berikut ini pada file /etc/dhcp/dhcp.conf dengan command `cat  /etc/dhcp/dhcp.conf` di web console westalis:
+1. Atur option domain-name-servers 192.211.2.2 sehingga client mendapatkan DNS dari WISE dan client dapat terhubung dengan internet melalui DNS tersebut
+
+<img width="354" alt="image" src="https://user-images.githubusercontent.com/58323466/201473419-9a40481a-7dab-411e-b0b0-75f82a42de5b.png">
 
 
 ### Soal No 6
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 5 menit sedangkan pada client yang melalui Switch3 selama 10 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 115 menit (6).
 
 ### Jawaban No 6
-blabla
+Tambahkan ketentuan berikut ini pada file /etc/dhcp/dhcp.conf dengan command `cat  /etc/dhcp/dhcp.conf` di web console westalis:
+1. Atur default-lease-time 600 karna diminta client yang melalui Switch3 selama 10 menit (sama dengan 600 detik) 
+2. Atur max-lease-time 6900 karna waktu maksimalnya 115 menit (sama dengan 6900 detik)
+
+
+<img width="217" alt="image" src="https://user-images.githubusercontent.com/58323466/201473507-5893160a-e45f-41bf-919d-81bfb4fcd75a.png">
+
+Jadi kurang lebih isi dari file `/etc/dhcp/dhcp.conf` pada web console westalis adalah sebagai berikut:
+
+![image](https://user-images.githubusercontent.com/58323466/201473543-6ed8474a-b3bc-48a1-84e2-e26f2f340dea.png)
+
 
 
 ### Soal No 7
