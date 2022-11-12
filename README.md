@@ -47,10 +47,10 @@ Selanjutnya kita juga bisa cek isi file yang lain dengan cat /etc/dhcp/dhcpd.con
 
 ### Soal No 2
 dan Ostania sebagai DHCP Relay (2).
-Kita memasukkan beberapa perintah dan syarat  agar Ostania bisa menjadi DHCP Relay, yaitu kita perlu melakukan konfigurasi terlebih dahulu pada Ostania kemudian melakukan apt-get update -y, apt-get install nano -y, iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.217.0.0/16, setelah itu apt-get install isc-dhcp-relay -y, dan service isc-dhcp-relay restart
+
 
 ### Jawaban No 2
-kita melakukan relay  dimana DHCPnya
+Kita memasukkan beberapa perintah dan syarat  agar Ostania bisa menjadi DHCP Relay, yaitu kita perlu melakukan konfigurasi terlebih dahulu pada Ostania kemudian melakukan apt-get update -y, apt-get install nano -y, iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.217.0.0/16, setelah itu apt-get install isc-dhcp-relay -y, dan service isc-dhcp-relay restart
 
 
 ### Soal No 3
