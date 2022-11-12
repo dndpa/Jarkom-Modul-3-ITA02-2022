@@ -37,14 +37,20 @@ fixed address di eden no 7
 Loid bersama Franky berencana membuat peta tersebut dengan kriteria WISE sebagai DNS Server, Westalis sebagai DHCP Server, Berlint sebagai Proxy Server (1).
 
 ### Jawaban No 1
-blabla
+Pertama pada bagian Wise kita dapat lihat pada cat /etc/dhcp/dhcpd.conf. Dan terdapat ![user.txt](./img/1b.JPG), disitu dapat dilihat  pada option domain-name-servers 192.211.2.2 itu mengarah ke wise karena diminta wise sebagai DNS server
+    Pada web console westalis, kita dapat membuat westalis menjadi DHCP Server dengan masukkan terlebih dahulu nano westalis.sh
+![user.txt](./img/1a.JPG), kita perlu pastikan kita sudah menginstall dhcp server dan sudah melakukan config terlebih dahulu pada westalis
+    Kemudian kita bisa melihat isi dari file tersebut dengan memasukkan cat etc/default/isc-dhcp-server. Bisa dilihat bahwa sudah terisi dengan syntax dan ada f0, dan adanya f0 karena westalis mengakses dari f0 dan yang lain.
+Selanjutnya kita juga bisa cek isi file yang lain dengan cat /etc/dhcp/dhcpd.conf, kita perlu membaca syarat-syarat yang diminta oleh soal, yaitu yang terdapat pada nomor 3
+    
 
 
 ### Soal No 2
 dan Ostania sebagai DHCP Relay (2).
+Kita memasukkan beberapa perintah dan syarat  agar Ostania bisa menjadi DHCP Relay, yaitu kita perlu melakukan konfigurasi terlebih dahulu pada Ostania kemudian melakukan apt-get update -y, apt-get install nano -y, iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.217.0.0/16, setelah itu apt-get install isc-dhcp-relay -y, dan service isc-dhcp-relay restart
 
 ### Jawaban No 2
-blabla
+kita melakukan relay  dimana DHCPnya
 
 
 ### Soal No 3
@@ -53,7 +59,9 @@ Loid dan Franky menyusun peta tersebut dengan hati-hati dan teliti. Ada beberapa
 2. Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.50 - [prefix IP].1.88 dan [prefix IP].1.120 - [prefix IP].1.155 (3).
 
 ### Jawaban No 3
-blabla
+1. Semua client yang ada harus menggunakan konfigurasi IP dan DHCP Server, kita ambil contoh pada SSS. Kemudian kita perlu ubah di cat /etc/network/interfaces 
+2. Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.50 - [prefix IP].1.88 dan [prefix IP].1.120 - [prefix IP].1.155. Bisa kita lihat melalui cat /etc/dhcp/dhcpd.conf pada web console westalis
+    ![user.txt](./img/3a.JPG), kita atur subnet 192.211.1.0 merupakan semua yang diatur dalam switch 1.
 
 
 ### Soal No 4
